@@ -1,0 +1,66 @@
+{
+    "sichuan@pas@real":{
+        "name": "攀枝花福田站-实时态",
+        "schema": "sichuan",
+        "app": "pas",
+        "ctx": "real",
+        "model": "N",
+        "plan": false
+    },
+    "sichuan@pas@plan":{
+        "name": "攀枝花福田站-规划态",
+        "schema": "sichuan",
+        "app": "pas",
+        "ctx": "plan",
+        "model": "N",
+        "plan": ""
+    },
+    "hebei@pas@real":{
+        "name": "冀北-实时态",
+        "schema": "hebei",
+        "app": "pas",
+        "ctx": "real",
+        "model": "N",
+        "plan": false
+    },
+    "hebei@pas@plan":{
+        "name": "冀北-规划态",
+        "schema": "hebei",
+        "app": "pas",
+        "ctx": "plan",
+        "model": "N",
+        "plan": ""
+    },
+    "wanxiang@pas@real":{
+        "name": "万象-实时态",
+        "schema": "wanxiang",
+        "app": "pas",
+        "ctx": "real",
+        "model": "N",
+        "plan": false
+    },
+    "wanxiang@pas@plan":{
+        "name": "万象-规划态",
+        "schema": "wanxiang",
+        "app": "pas",
+        "ctx": "plan",
+        "model": "N",
+        "plan": ""
+    },
+    "zhengxian@pas@real":{
+        "name": "攀枝花整县-实时态",
+        "schema": "zhengxian",
+        "app": "pas",
+        "ctx": "plan",
+        "model": "X",
+        "plan": false
+    },
+    "zhengxian@pas@plan":{
+        "name": "攀枝花整县-规划态",
+        "schema": "zhengxian",
+        "app": "pas",
+        "ctx": "plan",
+        "model": "X",
+        "plan": ""
+    }
+}

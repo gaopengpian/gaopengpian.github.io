@@ -1,0 +1,5846 @@
+{
+	"dev_type_list": [{
+			"label": "发电机",
+			"value": "generatingunit",
+			"type" : 1
+		},
+		{
+			"label": "负荷",
+			"value": "energyconsumer",
+			"type" : 1
+		},
+		{
+			"label": "电储能",
+			"value": "energystorage",
+			"type" : 1
+		},
+		{
+			"label": "热源",
+			"value": "iems_def_hs",
+			"type" : 2
+		},
+		{
+			"label": "热负荷",
+			"value": "iems_def_hl",
+			"type" : 2
+		},
+		{
+			"label": "热储能",
+			"value": "iems_def_hstore",
+			"type" : 2
+		},
+		{
+			"label": "冷源",
+			"value": "iems_def_cs",
+			"type" : 3
+		},
+		{
+			"label": "冷负荷",
+			"value": "iems_def_cl",
+			"type" : 3
+		},
+		{
+			"label": "冷储能",
+			"value": "iems_def_cstore",
+			"type" : 3
+		},
+		{
+			"label": "气源",
+			"value": "iems_def_gs",
+			"type" : 4
+		},
+		{
+			"label": "气负荷",
+			"value": "iems_def_gl",
+			"type" : 4
+		},
+		{
+			"label": "热电联产机组",
+			"value": "iems_def_cogen",
+			"type" : 5
+		},
+		{
+			"label": "溴化锂机组",
+			"value": "iems_def_lbu",
+			"type" : 5
+		},
+		{
+			"label": "热换热机组",
+			"value": "iems_def_heu",
+			"type" : 5
+		},
+		{
+			"label": "气换热机组",
+			"value": "iems_def_gheu",
+			"type" : 5
+		},
+		{
+			"label": "电换热机组",
+			"value": "iems_def_eheu",
+			"type" : 5
+		},
+		{
+			"label": "电换冷机组",
+			"value": "iems_def_ecu",
+			"type" : 5
+		},
+		{
+			"label": "直燃机机组",
+			"value": "iems_def_gdfm",
+			"type" : 5
+		},
+		{
+			"label": "循环泵",
+			"value": "iems_def_pump",
+			"type" : 5
+		}
+	],
+
+	"para_list": [
+		{
+		"dev_type": "发电机",
+		"dev_table": "generatingunit",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "发电机类型",
+						"para_data_para": "gn_type",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":0,"label":"火电"},
+							{"value":1,"label":"水电"},
+							{"value":2,"label":"虚拟发电机"},
+							{"value":3,"label":"调相机"},
+							{"value":4,"label":"核电"},
+							{"value":5,"label":"抽蓄"},
+							{"value":6,"label":"自动等值参数源"},
+							{"value":7,"label":"风电"},
+							{"value":8,"label":"光伏"},
+							{"value":9,"label":"汽轮机"},
+							{"value":10,"label":"燃气轮机"},
+							{"value":11,"label":"储能等值"}
+							]
+					},
+					{
+						"para_data_name": "节点类型",
+						"para_data_para": "pf_type",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "PQ节点"
+						}, {
+							"value": 2,
+							"label": "PV节点"
+						}, {
+							"value": 3,
+							"label": "平衡节点"
+						}]
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "st_id",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [{
+				"para_value_name": "设定值",
+				"data": [{
+						"para_data_name": "有功设定值",
+						"para_data_para": "p_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "无功设定值",
+						"para_data_para": "q_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "电压设定值",
+						"para_data_para": "v_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "有功上限",
+						"para_data_para": "p_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "有功下限",
+						"para_data_para": "p_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "无功上限",
+						"para_data_para": "q_max",
+						"para_data_value": "",
+						"para_data_unit": "MVar",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "无功下限",
+						"para_data_para": "q_min",
+						"para_data_value": "",
+						"para_data_unit": "MVar",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [{
+						"para_data_name": "上网电价",
+						"para_data_para": "p_price",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "煤耗特性系数0",
+						"para_data_para": "cost0",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "煤耗特性系数1",
+						"para_data_para": "cost1",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "煤耗特性系数2",
+						"para_data_para": "cost2",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "有功功率pre",
+					"para_data_para": "p_pre",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "无功功率pre",
+					"para_data_para": "q_pre",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时电流pre",
+					"para_data_para": "i_pre",
+					"para_data_value": "",
+					"para_data_unit": "A",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时电压pre",
+					"para_data_para": "v_pre",
+					"para_data_value": "",
+					"para_data_unit": "kV",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "计算有功功率",
+					"para_data_para": "p",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算无功功率",
+					"para_data_para": "q",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算电流",
+					"para_data_para": "i",
+					"para_data_value": "",
+					"para_data_unit": "A",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算电压",
+					"para_data_para": "v",
+					"para_data_value": "",
+					"para_data_unit": "kV",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},
+
+		{
+		"dev_type": "热源",
+		"dev_table": "iems_def_hs",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "水力控制类型",
+						"para_data_para": "controltype",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":0,"label":"无控制"},
+							{"value":3,"label":"定压力"},
+							{"value":4,"label":"定流量"}
+							]
+					},
+					{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"水"},
+							{"value":2,"label":"蒸汽"},
+							{"value":3,"label":"烟气"},
+							{"value":4,"label":"天然气"}
+							]
+					},
+					{
+						"para_data_name": "热力控制类型",
+						"para_data_para": "ctrltype_them",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 0,
+							"label": "无控制"
+						}, {
+							"value": 1,
+							"label": "定功率"
+						}, {
+							"value": 2,
+							"label": "定出口温度"
+						}, {
+							"value": 3,
+							"label": "定压力"
+						}, {
+							"value": 4,
+							"label": "定流量"
+						}, {
+							"value": 5,
+							"label": "定室内温度"
+						}]
+					},
+					{
+						"para_data_name": "关联泵",
+						"para_data_para": "ipump",
+						"para_data_value": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "热效率值",
+						"para_data_para": "eff",
+						"para_data_value": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [{
+				"para_value_name": "设定值",
+				"data": [{
+						"para_data_name": "热功率设定值",
+						"para_data_para": "thou_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供热温度设定值",
+						"para_data_para": "temp_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量设定值",
+						"para_data_para": "mf_set",
+						"para_data_value": "",
+						"para_data_unit": "t/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "压力设定值",
+						"para_data_para": "pr_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "热出力上限",
+						"para_data_para": "thou_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "热出力下限",
+						"para_data_para": "thou_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "热出力增大变化率上限",
+						"para_data_para": "thou_rup",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "热出力增大变化率下限",
+						"para_data_para": "thou_rdn",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水温度上限",
+						"para_data_para": "temp_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水温度下限",
+						"para_data_para": "temp_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水流量上限",
+						"para_data_para": "mf_max",
+						"para_data_value": "",
+						"para_data_unit": "t/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水流量下限",
+						"para_data_para": "mf_min",
+						"para_data_value": "",
+						"para_data_unit": "t/h",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [{
+						"para_data_name": "热价",
+						"para_data_para": "h_price",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时输出热功率",
+					"para_data_para": "thou_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时供温",
+					"para_data_para": "tem_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时流量",
+					"para_data_para": "mf_pre",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时压力",
+					"para_data_para": "pr_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "输出热功率",
+					"para_data_para": "thou",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "供温",
+					"para_data_para": "tem",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "流量",
+					"para_data_para": "mf",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "压力",
+					"para_data_para": "pr",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}
+					
+				]
+			}
+		]
+	},
+
+		{
+		"dev_type": "冷源",
+		"dev_table": "iems_def_cs",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "水力控制类型",
+						"para_data_para": "controltype",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":0,"label":"无控制"},
+							{"value":3,"label":"定压力"},
+							{"value":4,"label":"定流量"}
+							]
+					},
+					{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"水"},
+							{"value":2,"label":"蒸汽"},
+							{"value":3,"label":"烟气"},
+							{"value":4,"label":"天然气"}
+							]
+					},
+					{
+						"para_data_name": "热力控制类型",
+						"para_data_para": "ctrltype_them",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 0,
+							"label": "无控制"
+						}, {
+							"value": 1,
+							"label": "定功率"
+						}, {
+							"value": 2,
+							"label": "定出口温度"
+						}, {
+							"value": 3,
+							"label": "定压力"
+						}, {
+							"value": 4,
+							"label": "定流量"
+						}, {
+							"value": 5,
+							"label": "定室内温度"
+						}]
+					},
+					{
+						"para_data_name": "关联泵",
+						"para_data_para": "ipump",
+						"para_data_value": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "冷效率值",
+						"para_data_para": "eff",
+						"para_data_value": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [{
+				"para_value_name": "设定值",
+				"data": [{
+						"para_data_name": "冷功率设定值",
+						"para_data_para": "cou_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供冷温度设定值",
+						"para_data_para": "temp_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量设定值",
+						"para_data_para": "mf_set",
+						"para_data_value": "",
+						"para_data_unit": "t/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "压力设定值",
+						"para_data_para": "pr_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "冷出力上限",
+						"para_data_para": "cou_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "冷出力下限",
+						"para_data_para": "cou_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "冷出力增大变化率上限",
+						"para_data_para": "cou_rup",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "冷出力增大变化率下限",
+						"para_data_para": "cou_rdn",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水温度上限",
+						"para_data_para": "temp_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水温度下限",
+						"para_data_para": "temp_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水流量上限",
+						"para_data_para": "mf_max",
+						"para_data_value": "",
+						"para_data_unit": "t/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "供水流量下限",
+						"para_data_para": "mf_min",
+						"para_data_value": "",
+						"para_data_unit": "t/h",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [{
+						"para_data_name": "冷价",
+						"para_data_para": "c_price",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时输出冷功率",
+					"para_data_para": "cou_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时供温",
+					"para_data_para": "tem_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时流量",
+					"para_data_para": "mf_pre",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时压力",
+					"para_data_para": "pr_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "输出冷功率",
+					"para_data_para": "cou",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "供温",
+					"para_data_para": "tem",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "流量",
+					"para_data_para": "mf",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "压力",
+					"para_data_para": "pr",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}
+					
+				]
+			}
+		]
+	},
+	
+		{
+		"dev_type": "气源",
+		"dev_table": "iems_def_gs",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制类型",
+						"para_data_para": "controltype",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":0,"label":"无控制"},
+							{"value":3,"label":"定压力"},
+							{"value":4,"label":"定流量"}
+							]
+					},
+					{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"水"},
+							{"value":2,"label":"蒸汽"},
+							{"value":3,"label":"烟气"},
+							{"value":4,"label":"天然气"}
+							]
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [{
+				"para_value_name": "设定值",
+				"data": [{
+						"para_data_name": "注入压力设定值",
+						"para_data_para": "pr_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "等效功率设定值",
+						"para_data_para": "p_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃气输出量设定值",
+						"para_data_para": "gasvo_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "等效功率上限",
+						"para_data_para": "p_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "等效功率下限",
+						"para_data_para": "p_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃气输出量上限",
+						"para_data_para": "gasvo_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃气输出量下限",
+						"para_data_para": "gasvo_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "注入压力上限",
+						"para_data_para": "pr_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "注入压力下限",
+						"para_data_para": "pr_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [{
+						"para_data_name": "冷价",
+						"para_data_para": "g_price",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},{
+						"para_data_name": "燃气系数1",
+						"para_data_para": "aq",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},{
+						"para_data_name": "燃气系数2",
+						"para_data_para": "bq",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},{
+						"para_data_name": "燃气系数3",
+						"para_data_para": "cq",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时输出燃气量",
+					"para_data_para": "gasvo_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时等效功率",
+					"para_data_para": "p_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时注入压力",
+					"para_data_para": "pr_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "等效功率",
+					"para_data_para": "p",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "输出燃气量",
+					"para_data_para": "gasvo",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "压力",
+					"para_data_para": "pr",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}
+					
+				]
+			}
+		]
+	},
+	
+	{
+		"dev_type": "负荷",
+		"dev_table": "energyconsumer",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "负荷类型",
+						"para_data_para": "ld_type",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关联多能负荷",
+						"para_data_para": "imld",
+						"para_data_value": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "st_id",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "有功上限",
+						"para_data_para": "p_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "有功下限",
+						"para_data_para": "p_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "无功上限",
+						"para_data_para": "q_max",
+						"para_data_value": "",
+						"para_data_unit": "MVar",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "无功下限",
+						"para_data_para": "q_min",
+						"para_data_value": "",
+						"para_data_unit": "MVar",
+						"para_data_type": "input"
+					}
+				]
+			},
+		
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时有功功率",
+					"para_data_para": "p_pre",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时无功功率",
+					"para_data_para": "q_pre",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时电流",
+					"para_data_para": "i_pre",
+					"para_data_value": "",
+					"para_data_unit": "A",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时电压",
+					"para_data_para": "v_pre",
+					"para_data_value": "",
+					"para_data_unit": "kV",
+					"para_data_type": "input"
+				}
+				
+			]
+		},{
+			"para_value_name": "设定状态",
+			"data": [{
+					"para_data_name": "设定有功功率",
+					"para_data_para": "p_set",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定无功功率",
+					"para_data_para": "q_set",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "计算有功功率",
+					"para_data_para": "p",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算无功功率",
+					"para_data_para": "q",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算电流",
+					"para_data_para": "i",
+					"para_data_value": "",
+					"para_data_unit": "A",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算电压",
+					"para_data_para": "v",
+					"para_data_value": "",
+					"para_data_unit": "kV",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}]
+			}
+		]
+	},
+	{
+		"dev_type": "热负荷",
+		"dev_table": "iems_def_hl",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "水力控制类型",
+						"para_data_para": "controltype",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "热力控制类型",
+						"para_data_para": "ctrltype_them",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 0,
+							"label": "无控制"
+						}, {
+							"value": 1,
+							"label": "定功率"
+						}, {
+							"value": 2,
+							"label": "定出口温度"
+						}, {
+							"value": 3,
+							"label": "定压力"
+						}, {
+							"value": 4,
+							"label": "定流量"
+						}, {
+							"value": 5,
+							"label": "定室内温度"
+						}]
+					},
+					{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "水"
+						}, {
+							"value": 2,
+							"label": "蒸汽"
+						}, {
+							"value": 3,
+							"label": "烟气"
+						}, {
+							"value": 4,
+							"label": "天然气"
+						}]
+					},
+					{
+						"para_data_name": "关联多能负荷",
+						"para_data_para": "imld",
+						"para_data_value": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关联泵",
+						"para_data_para": "ipump",
+						"para_data_value": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "散热器总的传热系数",
+						"para_data_para": "htc",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "散热器总的传热面积",
+						"para_data_para": "hta",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "混合系数",
+						"para_data_para": "mixco",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "有效系数",
+						"para_data_para": "effco",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "建筑物体积",
+						"para_data_para": "vol",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "建筑物体积热指标",
+						"para_data_para": "volhi",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "热负荷局部阻力系数",
+						"para_data_para": "lorc",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "室内外间热导",
+						"para_data_para": "in_out_conductance",
+						"para_data_value": "",
+						"para_data_unit": "WM/℃",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "建筑热容",
+						"para_data_para": "capacity_bld",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "能量梯级利用率",
+						"para_data_para": "cascade_coe",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "室内温度上限",
+						"para_data_para": "rotem_max",
+						"para_data_value": "",
+						"para_data_unit": "℃",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "室内温度下限",
+						"para_data_para": "rotem_min",
+						"para_data_value": "",
+						"para_data_unit": "℃",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "回水温度上限",
+						"para_data_para": "temp_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "回水温度下限",
+						"para_data_para": "temp_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "消耗热功率上限",
+						"para_data_para": "cohp_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "消耗热功率下限",
+						"para_data_para": "cohp_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量上限",
+						"para_data_para": "mf_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量下限",
+						"para_data_para": "mf_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+		
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差分布",
+					"para_data_para": "fore_bias_dist",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差均值",
+					"para_data_para": "fore_bias_mean",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差方差",
+					"para_data_para": "fore_bias_var",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "温度是否有效",
+					"para_data_para": "rotem_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时消耗热功率",
+					"para_data_para": "cohp_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时室内温度",
+					"para_data_para": "rotem_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时室外温度",
+					"para_data_para": "outem_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时回水温度",
+					"para_data_para": "tem_pre",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时压力",
+					"para_data_para": "pr_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时流量",
+					"para_data_para": "mf_pre",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				}
+				
+			]
+		},{
+			"para_value_name": "设定状态",
+			"data": [{
+					"para_data_name": "设定回水温度",
+					"para_data_para": "temp_set",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定消耗功率",
+					"para_data_para": "cohp_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定室内温度",
+					"para_data_para": "rotem_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定室外温度",
+					"para_data_para": "outem_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定流量",
+					"para_data_para": "mf_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定压力",
+					"para_data_para": "pr_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "消耗热功率",
+					"para_data_para": "cohp",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "室内温度",
+					"para_data_para": "rotem",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "室外温度",
+					"para_data_para": "outem",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "回水温度",
+					"para_data_para": "tem",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "压力",
+					"para_data_para": "pr",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "流量",
+					"para_data_para": "mf",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}]
+			}
+		]
+	},
+	{
+		"dev_type": "气负荷",
+		"dev_table": "iems_def_gl",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "水"
+						}, {
+							"value": 2,
+							"label": "蒸汽"
+						}, {
+							"value": 3,
+							"label": "烟气"
+						}, {
+							"value": 4,
+							"label": "天然气"
+						}]
+					},
+					{
+						"para_data_name": "燃气系数1",
+						"para_data_para": "aq",
+						"para_data_value": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃气系数2",
+						"para_data_para": "bq",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃气系数3",
+						"para_data_para": "cq",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "燃气量上限",
+						"para_data_para": "gasvo_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃气量下限",
+						"para_data_para": "gasvo_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "等效功率上限",
+						"para_data_para": "p_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "等效功率下限",
+						"para_data_para": "p_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+		
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差分布",
+					"para_data_para": "fore_bias_dist",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差均值",
+					"para_data_para": "fore_bias_mean",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差方差",
+					"para_data_para": "fore_bias_var",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时输入燃气质量",
+					"para_data_para": "gasvo_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时等效功率",
+					"para_data_para": "p_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},{
+			"para_value_name": "设定状态",
+			"data": [{
+					"para_data_name": "设定燃气质量",
+					"para_data_para": "gasvo_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定等效功率",
+					"para_data_para": "p_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "输入燃气量",
+					"para_data_para": "gasvo",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "等效功率",
+					"para_data_para": "p",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}]
+			}
+		]
+	},
+	{
+		"dev_type": "冷负荷",
+		"dev_table": "iems_def_cl",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "水力控制类型",
+						"para_data_para": "controltype",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "热力控制类型",
+						"para_data_para": "ctrltype_them",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 0,
+							"label": "无控制"
+						}, {
+							"value": 1,
+							"label": "定功率"
+						}, {
+							"value": 2,
+							"label": "定出口温度"
+						}, {
+							"value": 3,
+							"label": "定压力"
+						}, {
+							"value": 4,
+							"label": "定流量"
+						}, {
+							"value": 5,
+							"label": "定室内温度"
+						}]
+					},
+					{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "水"
+						}, {
+							"value": 2,
+							"label": "蒸汽"
+						}, {
+							"value": 3,
+							"label": "烟气"
+						}, {
+							"value": 4,
+							"label": "天然气"
+						}]
+					},
+					{
+						"para_data_name": "关联多能负荷",
+						"para_data_para": "imld",
+						"para_data_value": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关联泵",
+						"para_data_para": "ipump",
+						"para_data_value": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "散热器总的传热系数",
+						"para_data_para": "htc",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "散热器总的传热面积",
+						"para_data_para": "hta",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "混合系数",
+						"para_data_para": "mixco",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "有效系数",
+						"para_data_para": "effco",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "建筑物体积",
+						"para_data_para": "vol",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "建筑物体积热指标",
+						"para_data_para": "volhi",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "冷负荷局部阻力系数",
+						"para_data_para": "lorc",
+						"para_data_value": "",
+						"para_data_unit": "WM/℃",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "室内外间热导",
+						"para_data_para": "in_out_conductance",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "建筑热容",
+						"para_data_para": "capacity_bld",
+						"para_data_value": "",
+						"para_data_unit": "MWh/℃",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "室内温度上限",
+						"para_data_para": "rotem_max",
+						"para_data_value": "",
+						"para_data_unit": "℃",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "室内温度下限",
+						"para_data_para": "rotem_min",
+						"para_data_value": "",
+						"para_data_unit": "℃",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "回水温度上限",
+						"para_data_para": "temp_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "回水温度下限",
+						"para_data_para": "temp_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "消耗冷功率上限",
+						"para_data_para": "cocp_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "消耗冷功率下限",
+						"para_data_para": "cocp_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量上限",
+						"para_data_para": "mf_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量下限",
+						"para_data_para": "mf_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+		
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差分布",
+					"para_data_para": "fore_bias_dist",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差均值",
+					"para_data_para": "fore_bias_mean",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "预测偏差方差",
+					"para_data_para": "fore_bias_var",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "温度是否有效",
+					"para_data_para": "rotem_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时消耗冷功率",
+					"para_data_para": "cocp_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时室内温度",
+					"para_data_para": "rotem_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时室外温度",
+					"para_data_para": "outem_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时回水温度",
+					"para_data_para": "tem_pre",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时压力",
+					"para_data_para": "pr_pre",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时流量",
+					"para_data_para": "mf_pre",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				}
+				
+			]
+		},{
+			"para_value_name": "设定状态",
+			"data": [{
+					"para_data_name": "设定回水温度",
+					"para_data_para": "temp_set",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定消耗功率",
+					"para_data_para": "cocp_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定室内温度",
+					"para_data_para": "rotem_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定室外温度",
+					"para_data_para": "outem_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定流量",
+					"para_data_para": "mf_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定压力",
+					"para_data_para": "pr_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "消耗冷功率",
+					"para_data_para": "cocp",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "室内温度",
+					"para_data_para": "rotem",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "室外温度",
+					"para_data_para": "outem",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "回水温度",
+					"para_data_para": "tem",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "压力",
+					"para_data_para": "pr",
+					"para_data_value": "",
+					"para_data_unit": "℃",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "流量",
+					"para_data_para": "mf",
+					"para_data_value": "",
+					"para_data_unit": "t/h",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}]
+			}
+		]
+	},
+	{
+		"dev_type": "电储能",
+		"dev_table": "energystorage",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "负荷类型",
+						"para_data_para": "ld_type",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "st_id",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "有功上限",
+						"para_data_para": "p_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "有功下限",
+						"para_data_para": "p_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "充电功率上限",
+						"para_data_para": "recpo_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "充电功率下限",
+						"para_data_para": "recpo_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放电功率上限",
+						"para_data_para": "dispo_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放电功率下限",
+						"para_data_para": "dispo_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "储电量最大值",
+						"para_data_para": "soc_max",
+						"para_data_value": "",
+						"para_data_unit": "MWh",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "储电量最小值",
+						"para_data_para": "soc_min",
+						"para_data_value": "",
+						"para_data_unit": "MWh",
+						"para_data_type": "input"
+					}
+
+				]
+			},
+			{
+				"para_value_name": "效率参数",
+				"data": [{
+					"para_data_name": "充电效率",
+					"para_data_para": "ce",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "放电效率",
+					"para_data_para": "de",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "自损耗率",
+					"para_data_para": "slorate",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时有功功率",
+					"para_data_para": "p_pre",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时无功功率",
+					"para_data_para": "q_pre",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时电流",
+					"para_data_para": "i_pre",
+					"para_data_value": "",
+					"para_data_unit": "A",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "实时电压",
+					"para_data_para": "v_pre",
+					"para_data_value": "",
+					"para_data_unit": "kV",
+					"para_data_type": "input"
+				}
+				
+			]
+		},{
+			"para_value_name": "设定状态",
+			"data": [{
+					"para_data_name": "设定有功功率",
+					"para_data_para": "p_set",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定无功功率",
+					"para_data_para": "q_set",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "计算有功功率",
+					"para_data_para": "p",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算无功功率",
+					"para_data_para": "q",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算电流",
+					"para_data_para": "i",
+					"para_data_value": "",
+					"para_data_unit": "A",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算电压",
+					"para_data_para": "v",
+					"para_data_value": "",
+					"para_data_unit": "kV",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}]
+			}
+		]
+	},
+	{
+		"dev_type": "热储能",
+		"dev_table": "iems_def_hstore",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"水"},
+							{"value":2,"label":"蒸汽"},
+							{"value":3,"label":"烟气"},
+							{"value":4,"label":"天然气"}
+							]
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "充热功率变化率上限",
+						"para_data_para": "rccp_max",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "充热功率上限",
+						"para_data_para": "recpo_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+						{
+						"para_data_name": "放热功率变化率下限",
+						"para_data_para": "rcdp_max",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{	"para_data_name": "充热功率下限",
+						"para_data_para": "recpo_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放热功率上限",
+						"para_data_para": "dispo_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放热功率下限",
+						"para_data_para": "dispo_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "储热量最大值",
+						"para_data_para": "soc_max",
+						"para_data_value": "",
+						"para_data_unit": "MWh",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "储热量最小值",
+						"para_data_para": "soc_min",
+						"para_data_value": "",
+						"para_data_unit": "MWh",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "充热次数最大值",
+						"para_data_para": "cn_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放热次数最大值",
+						"para_data_para": "dcn_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量最大值",
+						"para_data_para": "mf_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量最小值",
+						"para_data_para": "mf_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+
+
+				]
+			},
+			{
+				"para_value_name": "效率参数",
+				"data": [{
+					"para_data_name": "充热效率",
+					"para_data_para": "ce",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "放热效率",
+					"para_data_para": "de",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "自损耗率",
+					"para_data_para": "slorate",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时储热量",
+					"para_data_para": "soc_pre",
+					"para_data_value": "",
+					"para_data_unit": "MWh",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时功率",
+					"para_data_para": "recpo_pre",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时效率",
+					"para_data_para": "eff",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},{
+			"para_value_name": "设定状态",
+			"data": [{
+					"para_data_name": "设定消耗功率",
+					"para_data_para": "cocp_set",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定功率",
+					"para_data_para": "recpo_set",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定流量",
+					"para_data_para": "mf_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定压力",
+					"para_data_para": "pr_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "计算功率",
+					"para_data_para": "recpo",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算储热量",
+					"para_data_para": "soc",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算流量",
+					"para_data_para": "mf",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算压力",
+					"para_data_para": "pr",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					},{
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+					"para_data_name": "是否参与日前调度",
+					"para_data_para": "da_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+					"para_data_name": "是否参与日内调度",
+					"para_data_para": "ro_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+					"para_data_name": "是否参与实时调度",
+					"para_data_para": "rt_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}
+				]
+			}
+		]
+	},
+	{
+		"dev_type": "冷储能",
+		"dev_table": "iems_def_cstore",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "介质类型",
+						"para_data_para": "media",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"水"},
+							{"value":2,"label":"蒸汽"},
+							{"value":3,"label":"烟气"},
+							{"value":4,"label":"天然气"}
+							]
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "充冷功率变化率上限",
+						"para_data_para": "rccp_max",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放冷功率变化率下限",
+						"para_data_para": "rcdp_max",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "充冷功率上限",
+						"para_data_para": "recpo_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "充冷功率下限",
+						"para_data_para": "recpo_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放冷功率上限",
+						"para_data_para": "dispo_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},		
+					{
+						"para_data_name": "放冷功率下限",
+						"para_data_para": "dispo_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "储冷量最大值",
+						"para_data_para": "soc_max",
+						"para_data_value": "",
+						"para_data_unit": "MWh",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "储冷量最小值",
+						"para_data_para": "soc_min",
+						"para_data_value": "",
+						"para_data_unit": "MWh",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "充冷次数最大值",
+						"para_data_para": "cn_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "放冷次数最大值",
+						"para_data_para": "dcn_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量最大值",
+						"para_data_para": "mf_max",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "流量最小值",
+						"para_data_para": "mf_min",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+
+
+				]
+			},
+			{
+				"para_value_name": "效率参数",
+				"data": [{
+					"para_data_name": "充冷效率",
+					"para_data_para": "ce",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "放冷效率",
+					"para_data_para": "de",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "自损耗率",
+					"para_data_para": "slorate",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				},{
+					"para_data_name": "实时储冷量",
+					"para_data_para": "soc_pre",
+					"para_data_value": "",
+					"para_data_unit": "MWh",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时功率",
+					"para_data_para": "recpo_pre",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "实时效率",
+					"para_data_para": "eff",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},{
+			"para_value_name": "设定状态",
+			"data": [{
+					"para_data_name": "设定功率",
+					"para_data_para": "recpo_set",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定流量",
+					"para_data_para": "mf_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定压力",
+					"para_data_para": "pr_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "设定消耗功率",
+					"para_data_para": "cocp_set",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "计算功率",
+					"para_data_para": "recpo",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算储冷量",
+					"para_data_para": "soc",
+					"para_data_value": "",
+					"para_data_unit": "MVar",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算流量",
+					"para_data_para": "mf",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "计算压力",
+					"para_data_para": "pr",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					},{
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+					"para_data_name": "是否参与日前调度",
+					"para_data_para": "da_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+					"para_data_name": "是否参与日内调度",
+					"para_data_para": "ro_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+					"para_data_name": "是否参与实时调度",
+					"para_data_para": "rt_enable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				}
+				]
+			}
+		]
+	},
+		{
+		"dev_type": "热电联产机组",
+		"dev_table": "iems_def_cogen",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制模式",
+						"para_data_para": "controlmode",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"以热定电"},
+							{"value":2,"label":"以电定热"}
+							]
+					},
+					{
+						"para_data_name": "所关联发电机",
+						"para_data_para": "iun",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联热源",
+						"para_data_para": "ihs",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联气负荷",
+						"para_data_para": "igl",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+		],
+		"feature_para_list": [{
+				"para_value_name": "设定值",
+				"data": [
+					{
+						"para_data_name": "边界点1电功率",
+						"para_data_para": "p1",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "边界点2电功率",
+						"para_data_para": "p2",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "边界点3电功率",
+						"para_data_para": "p3",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "边界点4电功率",
+						"para_data_para": "p4",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "边界点1热功率",
+						"para_data_para": "thou1",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "边界点2热功率",
+						"para_data_para": "thou2",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "边界点3热功率",
+						"para_data_para": "thou3",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "边界点4热功率",
+						"para_data_para": "thou4",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					}
+					
+			
+				]
+			},
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "最小热功率输出",
+						"para_data_para": "out_heatpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小电功率输出",
+						"para_data_para": "out_elecpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率输出",
+						"para_data_para": "out_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大电功率输出",
+						"para_data_para": "out_elecpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（上）",
+						"para_data_para": "rup_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大电功率爬坡（上）",
+						"para_data_para": "rup_elecpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（下）",
+						"para_data_para": "rdn_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大电功率爬坡（下）",
+						"para_data_para": "rdn_elecpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大进气功率",
+						"para_data_para": "in_gasmmax",
+						"para_data_value": "",
+						"para_data_unit": "Nm^3/s",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小开机时间",
+						"para_data_para": "min_open_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小关机时间",
+						"para_data_para": "min_close_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [{
+						"para_data_name": "执行气价",
+						"para_data_para": "price_g",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃料系数1",
+						"para_data_para": "cost_ee",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃料系数2",
+						"para_data_para": "cost_hh",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃料系数3",
+						"para_data_para": "cost_eh",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃料系数4",
+						"para_data_para": "cost_e",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃料系数5",
+						"para_data_para": "cost_h",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "燃料系数6",
+						"para_data_para": "cost_0",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "关",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "有功",
+					"para_data_para": "p",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "热功率",
+					"para_data_para": "thou",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "热电比",
+					"para_data_para": "ter",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "热效率值",
+					"para_data_para": "eff",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},
+		{
+		"dev_type": "溴化锂机组",
+		"dev_table": "iems_def_lbu",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制模式",
+						"para_data_para": "controlmode",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"以热/冷定驱动热"},
+							{"value":2,"label":"以驱动热定热/冷"}
+							]
+					},
+					{
+						"para_data_name": "所关联热源",
+						"para_data_para": "ihs",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联热负荷",
+						"para_data_para": "ihl",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联冷源",
+						"para_data_para": "ics",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联电负荷",
+						"para_data_para": "iel",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "最小热功率输出",
+						"para_data_para": "out_heatpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小冷功率输出",
+						"para_data_para": "out_coldpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率输出",
+						"para_data_para": "out_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率输出",
+						"para_data_para": "out_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（上）",
+						"para_data_para": "rup_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率爬坡（上）",
+						"para_data_para": "rup_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（下）",
+						"para_data_para": "rdn_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率爬坡（下）",
+						"para_data_para": "rdn_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小开机时间",
+						"para_data_para": "min_open_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小关机时间",
+						"para_data_para": "min_close_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [{
+						"para_data_name": "制热用电系数",
+						"para_data_para": "ecost_h",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "制冷用电系数",
+						"para_data_para": "ecost_c",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "固定耗电功率",
+						"para_data_para": "ecost_0",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "关",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [{
+					"para_data_name": "热换冷系数",
+					"para_data_para": "heco",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "热功率",
+					"para_data_para": "thou",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "冷功率",
+					"para_data_para": "cou",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "换热系数",
+					"para_data_para": "eff",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},
+		{
+		"dev_type": "热换热机组",
+		"dev_table": "iems_def_heu",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制模式",
+						"para_data_para": "controlmode",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"以出口热定进口热"},
+							{"value":2,"label":"以进口热定出口热"}
+							]
+					},
+					{
+						"para_data_name": "所关联热源",
+						"para_data_para": "ihs",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联热负荷",
+						"para_data_para": "ihl",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联热储",
+						"para_data_para": "ihstore",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "最小热功率输出",
+						"para_data_para": "out_heatpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率输出",
+						"para_data_para": "out_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（上）",
+						"para_data_para": "rup_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（下）",
+						"para_data_para": "rdn_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小开机时间",
+						"para_data_para": "min_open_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小关机时间",
+						"para_data_para": "min_close_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "关",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [
+				{
+					"para_data_name": "热功率",
+					"para_data_para": "thou",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+
+				{
+					"para_data_name": "换热系数",
+					"para_data_para": "eff",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},
+		{
+		"dev_type": "气换热机组",
+		"dev_table": "iems_def_gheu",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制模式",
+						"para_data_para": "controlmode",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"以热定气"},
+							{"value":2,"label":"以气定热"}
+							]
+					},
+					{
+						"para_data_name": "所关联热源",
+						"para_data_para": "ihs",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联气负荷",
+						"para_data_para": "igl",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联热储",
+						"para_data_para": "ihstore",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "最小热功率输出",
+						"para_data_para": "out_heatpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率输出",
+						"para_data_para": "out_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（上）",
+						"para_data_para": "rup_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（下）",
+						"para_data_para": "rdn_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小开机时间",
+						"para_data_para": "min_open_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小关机时间",
+						"para_data_para": "min_close_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大进气功率",
+						"para_data_para": "in_gasmmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [
+					{
+						"para_data_name": "执行气价",
+						"para_data_para": "price_g",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "关",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [
+				{
+					"para_data_name": "热功率",
+					"para_data_para": "thou",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+
+				{
+					"para_data_name": "燃烧效率系数",
+					"para_data_para": "eff",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},
+	
+		{
+		"dev_type": "电换热机组",
+		"dev_table": "iems_def_eheu",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制模式",
+						"para_data_para": "controlmode",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"以热定电"},
+							{"value":2,"label":"以电定热"}
+							]
+					},
+					{
+						"para_data_name": "所关联热源",
+						"para_data_para": "ihs",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联电负荷",
+						"para_data_para": "iel",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联热储能",
+						"para_data_para": "ihstore",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "最小热功率输出",
+						"para_data_para": "out_heatpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率输出",
+						"para_data_para": "out_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（上）",
+						"para_data_para": "rup_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（下）",
+						"para_data_para": "rdn_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW/h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小开机时间",
+						"para_data_para": "min_open_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小关机时间",
+						"para_data_para": "min_close_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大电功率输入",
+						"para_data_para": "in_elecpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "关",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [
+				{
+					"para_data_name": "热功率",
+					"para_data_para": "thou",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+
+				{
+					"para_data_name": "电换热系数",
+					"para_data_para": "ehtco",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},
+		{
+		"dev_type": "电换冷机组",
+		"dev_table": "iems_def_ecu",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制模式",
+						"para_data_para": "controlmode",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"以冷定电"},
+							{"value":2,"label":"以电定冷"}
+							]
+					},
+					{
+						"para_data_name": "所关联冷源",
+						"para_data_para": "ics",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联电负荷",
+						"para_data_para": "iel",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联冷储能",
+						"para_data_para": "icstore",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "最小冷功率输出",
+						"para_data_para": "out_coldpmin",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率输出",
+						"para_data_para": "out_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率爬坡（上）",
+						"para_data_para": "rup_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率爬坡（下）",
+						"para_data_para": "rdn_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小开机时间",
+						"para_data_para": "min_open_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小关机时间",
+						"para_data_para": "min_close_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大电功率输入",
+						"para_data_para": "in_elecpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "关",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [
+				{
+					"para_data_name": "冷功率",
+					"para_data_para": "cou",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+
+				{
+					"para_data_name": "电换冷系数",
+					"para_data_para": "eeco",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "零电功率点热功率值",
+					"para_data_para": "cou0",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},			
+		{
+		"dev_type": "直燃机机组",
+		"dev_table": "iems_def_gdfm",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "控制模式",
+						"para_data_para": "controlmode",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"以热/冷定气"},
+							{"value":2,"label":"以气定热/冷"}
+							]
+					},
+					{
+						"para_data_name": "运行状态",
+						"para_data_para": "operst",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [
+							{"value":1,"label":"制热"},
+							{"value":2,"label":"制冷"}
+							]
+					},
+					{
+						"para_data_name": "所关联冷源",
+						"para_data_para": "ics",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联热源",
+						"para_data_para": "ihs",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所关联气负荷",
+						"para_data_para": "igl",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+		],
+		"feature_para_list": [
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "最大冷功率输出",
+						"para_data_para": "out_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率输出",
+						"para_data_para": "out_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率爬坡（上）",
+						"para_data_para": "rup_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率爬坡（下）",
+						"para_data_para": "rdn_coldpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大热功率爬坡（上）",
+						"para_data_para": "rup_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最大冷功率爬坡（下）",
+						"para_data_para": "rdn_heatpmax",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小开机时间",
+						"para_data_para": "min_open_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "最小关机时间",
+						"para_data_para": "min_close_time",
+						"para_data_value": "",
+						"para_data_unit": "h",
+						"para_data_type": "input"
+					}
+				]
+			},
+			{
+				"para_value_name": "经济参数",
+				"data": [
+					{
+						"para_data_name": "开机成本",
+						"para_data_para": "start_cost",
+						"para_data_value": "",
+						"para_data_unit": "元",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关机成本",
+						"para_data_para": "stop_cost",
+						"para_data_value": "",
+						"para_data_unit": "关",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "投产状态",
+					"para_data_para": "run_state",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+				}
+				
+			]
+		},
+		{
+			"para_value_name": "计算状态",
+			"data": [
+				{
+					"para_data_name": "冷功率",
+					"para_data_para": "cou",
+					"para_data_value": "",
+					"para_data_unit": "MW",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "制冷性能系数",
+					"para_data_para": "cop",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "热功率",
+					"para_data_para": "thou",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "换热系数",
+					"para_data_para": "eff",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		},
+		{
+				"para_value_name": "运行设置",
+				"data": [{
+					"para_data_name": "是否可调",
+					"para_data_para": "regable",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "select",
+					"select_lisg": [{
+						"value": 1,
+						"label": "是"
+					}, {
+						"value": 0,
+						"label": "否"
+					}]
+				},{
+						"para_data_name": "参与机组组合",
+						"para_data_para": "uc_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日前组合",
+						"para_data_para": "da_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与日内组合",
+						"para_data_para": "ro_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					},
+					{
+						"para_data_name": "参与实时组合",
+						"para_data_para": "rt_enable",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "select",
+						"select_lisg": [{
+							"value": 1,
+							"label": "是"
+						}, {
+							"value": 0,
+							"label": "否"
+						}]
+					}
+				]
+			}
+		]
+	},			
+		{
+		"dev_type": "循环泵",
+		"dev_table": "iems_def_pump",
+		"base_para_list": [{
+				"para_value_name": "基本参数",
+				"data": [
+					{
+						"para_data_name": "名称",
+						"para_data_para": "name",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "关联电力负荷",
+						"para_data_para": "ild",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]},
+			{
+				"para_value_name": "拓扑参数",
+				"data": [{
+						"para_data_name": "所属厂站",
+						"para_data_para": "ist",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "所属拓扑岛",
+						"para_data_para": "tpcolor",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+				]
+			}
+			
+		],
+		"feature_para_list": [{
+				"para_value_name": "设定值",
+				"data": [{
+						"para_data_name": "循环泵的扬程设置",
+						"para_data_para": "lift_set",
+						"para_data_value": "",
+						"para_data_unit": "",
+						"para_data_type": "input"
+					}
+					
+				]
+			},
+			{
+				"para_value_name": "上下限",
+				"data": [{
+						"para_data_name": "循环泵的最大扬程",
+						"para_data_para": "lift_max",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					},
+					{
+						"para_data_name": "循环泵的最小扬程",
+						"para_data_para": "lift_min",
+						"para_data_value": "",
+						"para_data_unit": "MW",
+						"para_data_type": "input"
+					}
+				
+				]
+			},
+			{
+				"para_value_name": "其他参数",
+				"data": [{
+					"para_data_name": "故障概率",
+					"para_data_para": "fault_prob",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+					
+				]
+			}
+		],
+		"run_para_list": [{
+			"para_value_name": "实时状态",
+			"data": [
+				{
+					"para_data_name": "循环泵的扬程",
+					"para_data_para": "lift",
+					"para_data_value": "",
+					"para_data_unit": ""
+				},{
+					"para_data_name": "水力特性曲线1",
+					"para_data_para": "coeff_a",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},{
+					"para_data_name": "水力特性曲线2",
+					"para_data_para": "coeff_b",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "水力特性曲线3",
+					"para_data_para": "coeff_c",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				},
+				{
+					"para_data_name": "循环泵电功率",
+					"para_data_para": "p",
+					"para_data_value": "",
+					"para_data_unit": "",
+					"para_data_type": "input"
+				}
+				
+			]
+		}
+		]
+	}
+]
+}

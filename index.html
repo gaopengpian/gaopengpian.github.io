@@ -1,8 +1,76 @@
-<p>Hello 大家好</p>
-<p>我是高鹏，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!doctype html><html lang=en class=dark><head><meta charset=UTF-8 /><link rel=icon href=/favicon.ico /><meta name=viewport content="width=device-width,initial-scale=1"/><title>dems</title><script src=/static/offlinemap/map_load.js></script><script src=/static/offlinemap/customstyle/stylejson.js></script><script type=module crossorigin src=/assets/index.6f7ee59a.js></script><link rel=modulepreload href=/assets/vendor.0e42ecf5.js><link rel=stylesheet href=/assets/vendor.92bc86a6.css><link rel=stylesheet href=/assets/index.9deb0162.css></head><body><div id=app class=wh100></div><script>function setTransform() {
+                let html_width =
+                    window.innerWidth ||
+                    document.documentElement.clientWidth ||
+                    document.body.clientWidth;
+                let html_height =
+                    window.innerHeight ||
+                    document.documentElement.clientHeight ||
+                    document.body.clientHeight;
+                let width_rate = html_width / 1920;
+                let height_rate = html_height / 947;
+                let scale_rate = Math.min(width_rate, height_rate);
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com">我的博客(已经不更细了,现在在知乎写文章)</a> </li>
-</ul>
+                let normal_rate = 1920 / 947;
+                let cur_rate = html_width / html_height;
+                let cur_vs_normal = cur_rate - normal_rate;
+
+                window.scale_rate = 1;
+                if (cur_vs_normal < -0.4) {
+                    // if (width_rate > 1.2 || width_rate < 0.8) {
+                    document.body.style.width = '1920px';
+                    document.body.style.height = '946px';
+                    document.body.style.transform =
+                        'scaleX(' + scale_rate + ') scaleY(' + scale_rate + ') translateZ(0)';
+                    document.body.style.transformOrigin = 'left top';
+                    document.body.backgroundSize = '100% 100%';
+
+                    window.scale_rate = scale_rate;
+
+                    let _getBoundingClientRect = Element.prototype.getBoundingClientRect;
+                    Element.prototype.getBoundingClientRect = function () {
+                        let res = _getBoundingClientRect.call(this);
+                        return {
+                            x: res.x / scale_rate,
+                            y: res.y / scale_rate,
+                            left: res.left / scale_rate,
+                            right: res.right / scale_rate,
+                            top: res.top / scale_rate,
+                            bottom: res.bottom / scale_rate,
+                            width: res.width / scale_rate,
+                            height: res.height / scale_rate,
+                        };
+                    };
+
+                    window.innerWidth = 1920;
+                    window.innerHeight = 947;
+                }
+            }
+
+            function setZoom() {
+                let html_width =
+                    window.innerWidth ||
+                    document.documentElement.clientWidth ||
+                    document.body.clientWidth;
+                let html_height =
+                    window.innerHeight ||
+                    document.documentElement.clientHeight ||
+                    document.body.clientHeight;
+                let width_rate = html_width / 1920;
+                let height_rate = html_height / 947;
+                let scale_rate = Math.min(width_rate, height_rate);
+
+                if (width_rate > 1.2 || width_rate < 0.8) {
+                    document.body.style.width = '1920px';
+                    document.body.style.height = '946px';
+                    document.body.style.zoom = scale_rate;
+                    document.body.backgroundSize = '100% 100%';
+                }
+
+                window.innerWidth = 1920;
+                window.innerHeight = 947;
+            }
+
+            // 初始化
+            setTransform();
+            // setZoom()</script></body></html>
